@@ -1,0 +1,120 @@
+/* 1. Выкорчевываем унаследованный темный фон из внутренностей Mermaid */
+.md-typeset .mermaid pre, 
+.md-typeset .mermaid code, 
+.md-typeset .mermaid foreignObject, 
+.md-typeset .mermaid foreignObject div {
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Стили для обычных блоков (А, B, D, E) в Светлой теме */
+.md-typeset .mermaid .node rect,
+.md-typeset .mermaid .node circle,
+.md-typeset .mermaid .node polygon {
+    fill: #f8f9fa !important;       /* Мягкий светлый фон */
+    stroke: #e0e0e0 !important;     /* Аккуратная серая граница */
+}
+.md-typeset .mermaid .node .label {
+    color: #212121 !important;      /* Читаемый темный текст */
+}
+
+/* 3. Автоматический адаптив под Темную тему (Slate) */
+[data-md-color-scheme="slate"] .md-typeset .mermaid .node rect,
+[data-md-color-scheme="slate"] .md-typeset .mermaid .node circle,
+[data-md-color-scheme="slate"] .md-typeset .mermaid .node polygon {
+    fill: #2a2e35 !important;       /* Благородный графитовый фон */
+    stroke: #454a54 !important;     /* Приглушенная граница */
+}
+[data-md-color-scheme="slate"] .md-typeset .mermaid .node .label {
+    color: #e2e8f0 !important;      /* Мягкий белый текст */
+}
+
+/* 4. Кастомные акцентные блоки (Ядро системы и Финал) */
+/* Блок ядра системы (Teal) */
+.md-typeset .mermaid .node.coreNode rect,
+.md-typeset .mermaid .node.coreNode circle,
+.md-typeset .mermaid .node.coreNode polygon {
+    fill: #00695c !important;
+    stroke: #004d40 !important;
+}
+.md-typeset .mermaid .node.coreNode .label,
+.md-typeset .mermaid .node.coreNode .label * {
+    color: #ffffff !important; /* Белый текст */
+}
+
+/* Блок успешного финала (Green) */
+.md-typeset .mermaid .node.successNode rect,
+.md-typeset .mermaid .node.successNode circle,
+.md-typeset .mermaid .node.successNode polygon {
+    fill: #2e7d32 !important;
+    stroke: #1b5e20 !important;
+}
+.md-typeset .mermaid .node.successNode .label,
+.md-typeset .mermaid .node.successNode .label * {
+    color: #ffffff !important; /* Белый текст */
+}
+
+/* Центрирование схем Mermaid */
+.md-typeset .mermaid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em 0; /* Небольшие отступы сверху и снизу для красоты */
+}
+
+/* Гарантия для SVG-элемента внутри контейнера */
+.md-typeset .mermaid svg {
+    margin: 0 auto !important;
+}
+
+/* Увеличиваем отступы между секциями для чистоты вида */
+.md-main__inner {
+    padding-top: 2rem;
+}
+
+/* Стилизация ваших бейджей (навыков) */
+code {
+    background-color: rgba(0, 150, 136, 0.1);
+    color: #009688;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+/* Скрываем полосу прокрутки для левой навигации и правого содержания страницы */
+.md-sidebar__inner, 
+.md-nav__scrollwrap {
+  /* Для Firefox */
+  scrollbar-width: none;
+  /* Для Internet Explorer и Edge */
+  -ms-overflow-style: none; 
+}
+
+/* Для Chrome, Safari и Opera */
+.md-sidebar__inner::-webkit-scrollbar, 
+.md-nav__scrollwrap::-webkit-scrollbar {
+  display: none;
+}
+
+/* Делаем текст во всех admonition (включая success, danger и т.д.) крупнее */
+.md-typeset .admonition, 
+.md-typeset details {
+    font-size: 0.81rem;    /* Увеличиваем размер шрифта (по умолчанию там ~0.8rem) */
+    line-height: 1.6;      /* Добавляем воздуха между строками */
+}
+
+/* Если внутри плашек есть списки, делаем их тоже крупнее */
+.md-typeset .admonition li, 
+.md-typeset details li {
+    font-size: 0.81rem;
+}
+.md-typeset .grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+img {
+    image-rendering: -webkit-optimize-contrast; /* Для Safari */
+    image-rendering: crisp-edges;               /* Для Firefox */
+    background-clip: padding-box;
+    transform: translateZ(0);                   /* Включает аппаратное сглаживание видеокарты */
+}

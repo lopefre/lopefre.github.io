@@ -1,0 +1,84 @@
+site_name: 'Светлана Гайворонская | Portfolio & Systems Analysis'
+site_description: 'Портфолио инженера по автоматизации процессов и системного аналитика'
+site_author: 'Светлана Гайворонская'
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Темная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  features:
+    - navigation.tabs
+    #- navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format # <-- Именно fence_code_format для нативного Material
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - 'Главная': index.md
+  
+  - 'Кейсы автоматизации':
+    - 'Full-Cycle LQA Framework (NLP)': cases/lqa-framework.md
+    - 'Сборка техдока: RPA и парсинг': cases/data-ingestion.md
+    - 'Сквозной контур локализации': cases/localization-pipeline.md
+    
+  - 'Системный и продуктовый анализ':
+    - 'Аудит качества (NLP-аналитика)': system_analysis/qa-audit.md
+    - 'Продуктовый анализ: Приложение Soundcheck': cases/soundcheck.md
+    - 'Единый источник данных (GameDev)': system_analysis/gdd-rocket-automation.md
+    - 'Проектирование систем: MedTech колл-центр': system_analysis/medtech-automation-concept.md
+    
+  - 'Аналитика и доменная экспертиза':
+    - 'Исследования и прикладной NLP': research/nlp-studies.md
+    - 'Процессы и комплаенс в MedTech': domain/medtech.md
+    
+  - 'Контакты': contacts/contacts.md
