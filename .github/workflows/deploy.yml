@@ -3,7 +3,7 @@ name: Deploy MkDocs Site
 on:
   push:
     branches:
-      - main  # Если у вас master, замените на master
+      - main  # Скрипт срабатывает, когда вы пушите в main
 
 permissions:
   contents: read
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mkdocs
-          pip install mkdocs-material  # Включаем тему Material по умолчанию
+          pip install mkdocs-material  # Ставим тему Material на всякий случай
 
       - name: Build MkDocs Site
         run: |
@@ -44,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: './site'  # Робот сам берет готовую папку с HTML
 
       - name: Deploy to GitHub Pages
         id: deployment
