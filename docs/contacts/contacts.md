@@ -14,7 +14,7 @@ hide:
 
 * **Telegram:** [@lopefre](https://t.me/lopefre)
 * **Email:** [nordensvetra@gmail.com](mailto:nordensvetra@gmail.com)
-* [**Хабр Карьера**](https://career.habr.com/svetlana_twux)
+* [**Хабр Карьера**](https://career.habr.com/svetlana_tech)
 
 </div>
 
