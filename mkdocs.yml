@@ -72,6 +72,7 @@ nav:
     - 'Сквозной контур локализации': cases/localization-pipeline.md
     
   - 'Системный и продуктовый анализ':
+    - 'Правовой комплаенс и защита IP (R&D)': system_analysis/ip.md
     - 'Аудит качества (NLP-аналитика)': system_analysis/qa-audit.md
     - 'Продуктовый анализ: Приложение Soundcheck': cases/soundcheck.md
     - 'Единый источник данных (GameDev)': system_analysis/gdd-rocket-automation.md
